@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/index.css" />
+   <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+  </head>
+  <div class="container">
+    <body>
+      <div class="card">
+        <div class="card-body">
+          <h1>Last updated:</h1>
+          <div class="iconElement">
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" 
+          alt="clear" 
+          id="icon"/>
+          </div>
+          <h2 
+          class="city-input">
+          Edinburgh
+      </h2>
+          <div class="tempConversion">
+            <span class="temperature" id="temperature"></span
+            ><span class="units">
+              <a href="#" id="celsius-link">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a>
+            </span>
+          </div>
+          <ul>
+            <li>Conditions: <span id="conditions"> </span></li>
+            <li>Humidity: <span id="humidity"></span>%</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="search-form" id="search-form">
+          <div class="col-sm-12">
+            <input
+              type="search"
+              placeholder="Type a city.."
+              autofocus="on"
+              autocomplete="off"
+              id="city-type-input"
+              class="form-control shadow-sm"
+            />
+        </div>
+         
+<div class="buttons">
+          <button
+            type="“submit”"
+            class="btn btn-light me-md-2"
+            id="“searchLocation"
+          >
+            Search City
+          </button>
+          <button class="btn btn-light" id="current-location-button">
+            My Location
+          </button>
+</div>
+     </form>   
+        
+
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <p class="emoji">☀️</p>
+            <strong class="day"> Mon </strong>
+            <p class="dayOneTemp">High 19c Low 11c</p>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <p class="emoji">☁️</p>
+            <strong class="day"> Tue </strong>
+            <p class="dayTwoTemp">High 15c Low 9c</p>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <p class="emoji">⛅️</p>
+            <strong class="day"> Wed </strong>
+            <p class="dayThreeTemp">High 15c Low 8c</p>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <p class="emoji">☀️</p>
+            <strong class="day"> Thurs </strong>
+            <p class="dayFourTemp">High 17c Low 8c</p>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <p class="emoji">☀️</p>
+            <strong class="day"> Fri </strong>
+            <p class="dayFiveTemp">High 21c Low 12c</p>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="footer">
+        Coded by <a href="https://www.instagram.com/shanzventures.va/" id="ig-linl">@Shanzventures.VA
+      </div>
+    </body>
+  </div>
+
+  <script src="src/index.js"></script>
+</html>

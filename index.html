@@ -16,8 +16,7 @@
   <div class="container">
     <body>
       <div class="card">
-        <div class="card-body">
-          <h1>Last updated:</h1>
+          <h1 id="now"></h1>
           <div class="iconElement">
           <img src="http://openweathermap.org/img/wn/10d@2x.png" 
           alt="clear" 
@@ -39,7 +38,6 @@
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
-        </div>
       </div>
 
       <form class="search-form" id="search-form">
@@ -67,64 +65,10 @@
           </button>
 </div>
      </form>   
-        
 
-      <div class="card-group">
-        <div class="card">
-          <div class="card-body">
-            <p class="emoji">☀️</p>
-            <strong class="day"> Mon </strong>
-            <p class="dayOneTemp">High 19c Low 11c</p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <p class="emoji">☁️</p>
-            <strong class="day"> Tue </strong>
-            <p class="dayTwoTemp">High 15c Low 9c</p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <p class="emoji">⛅️</p>
-            <strong class="day"> Wed </strong>
-            <p class="dayThreeTemp">High 15c Low 8c</p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <p class="emoji">☀️</p>
-            <strong class="day"> Thurs </strong>
-            <p class="dayFourTemp">High 17c Low 8c</p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <p class="emoji">☀️</p>
-            <strong class="day"> Fri </strong>
-            <p class="dayFiveTemp">High 21c Low 12c</p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
-          </div>
-        </div>
+      <div class="row" id="forecast">
       </div>
+      
       <hr />
       <div class="footer">
         Coded by <a href="https://www.instagram.com/shanzventures.va/" id="ig-linl">@Shanzventures.VA

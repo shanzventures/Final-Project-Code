@@ -44,7 +44,6 @@ li {
   text-align: center;
   margin: 0 auto;
   width: 18rem;
-  padding: 10px 0 10px 0;
   border-radius: 10px;
 }
 
@@ -69,7 +68,6 @@ form {
   background-color: white;
   border-radius: 10px;
   color: #585c5e;
-  text-align: centre;
   font-size: small;
 }
 

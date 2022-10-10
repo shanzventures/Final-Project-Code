@@ -9,6 +9,7 @@ body {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -67,6 +68,13 @@ form {
   text-align: center;
   background-color: white;
   border-radius: 10px;
+  color: #585c5e;
+  text-align: centre;
+  font-size: small;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
 
 strong {

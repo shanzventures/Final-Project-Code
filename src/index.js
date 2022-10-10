@@ -1,4 +1,14 @@
-function formatDate(now) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
   let days = [
     "Sunday",
     "Monday",
@@ -8,35 +18,10 @@ function formatDate(now) {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
-
-  let months = [
-    "Jan",
-    "Feb",
-    "March",
-    "April",
-    "May",
-    "Jun",
-    "July",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[now.getMonth()];
-  let date = now.getDate();
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minute = now.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-  return ` ${day}, ${month} ${date} - ${hour}:${minute}`;
+  let day = days[date.getDay()];
+  return `Last Updated: ${day} ${hours}:${minutes}`;
 }
-///5 day daily-forecast
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -45,7 +30,6 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-//////////////////////////////////////////////////////////////////////////// Weather conditions
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -84,15 +68,10 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "8e9b90927c2534dbc9ab90cce8c00178";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-
-let nowElement = document.querySelector("#now");
-let currentTime = new Date();
-nowElement.innerHTML = formatDate(currentTime);
-
 /////////////////////////////////////////////////////////
 
 function displayWeatherCondition(response) {
@@ -102,6 +81,7 @@ function displayWeatherCondition(response) {
   let conditionsElement = document.querySelector("#conditions");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -110,6 +90,7 @@ function displayWeatherCondition(response) {
   conditionsElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
